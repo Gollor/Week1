@@ -24,7 +24,7 @@ python search.py path n
 клас та `n` найближчих сусідів з обраного датасету:
 
 ```bash
-python search path n
+python search.php path n
 ```
 Пошук має відбуватись за допомогою індексу.
 
