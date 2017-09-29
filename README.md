@@ -24,11 +24,11 @@ python search.py path n
 клас та `n` найближчих сусідів з обраного датасету:
 
 ```bash
-python search.php path n
+python search.py path n
 ```
 Пошук має відбуватись за допомогою індексу.
 
-Програма `test.php` створює файл `test.txt` з результатами класифікації зображень 
+Програма `test.py` створює файл `test.txt` з результатами класифікації зображень 
 `classifieds/test/` у форматі:
 ```text
 path1 class_no_1
