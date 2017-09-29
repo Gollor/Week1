@@ -28,14 +28,14 @@ for d in dirs:
         random.shuffle(files)
 
         test_files = files[:100]
-        train_files = files[100:]
+        train_files = files[100:1000]
 
         for fn in train_files:
             copyfile(in_path + d + '/' + fn, new_dir + str(tf) + '.jpg')
             tf += 1
 
         for fn in test_files:
-            test_total.append(str(nd) + '_' + d)
+            test_total.append({'c': str(nd) + '_' + d, 'fn': in_path + d + '/' + fn})
 
         print('%s %s' % (len(train_files), nd))
 
@@ -45,7 +45,6 @@ for d in dirs:
 random.shuffle(test_total)
 
 with open('week1/labels.txt', 'w') as f:
-    for i, fn in enumerate(test_total):
-        ext = fn.split('.')[-1]
-        copyfile(fn, test_dir + str(i) + '.jpg')
-        f.write('%s %s\n' % (i, fn))
+    for i, a in enumerate(test_total):
+        copyfile(a['fn'], test_dir + str(i) + '.jpg')
+        f.write('%s %s\n' % (i, a['c']))
