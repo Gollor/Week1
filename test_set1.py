@@ -44,7 +44,7 @@ for d in dirs:
 
 random.shuffle(test_total)
 
-with open('week1/labels.txt', 'w') as f:
+with open(out_path + 'labels.txt', 'w') as f:
     for i, a in enumerate(test_total):
         copyfile(a['fn'], test_dir + str(i) + '.jpg')
         f.write('%s %s\n' % (i, a['c']))
